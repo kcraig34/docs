@@ -2,11 +2,11 @@
 author:
   name: Linode Community
   email: docs@linode.com
-description: 'Install the Oracle Java development kit'
+description: 'This how-to guide installs the Oracle Java development kit (JDK) on a Linode running Ubuntu 16.04.'
 keywords: 'oracle,java,JDK,install java,ubuntu'
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 published: 'Monday, May 22nd, 2014'
-title: Install Java on Ubuntu 16.04
+title: Install Oracle Java on Ubuntu 16.04
 contributor:
   name: Phil Zona
   link: https://github.com/pbzona
@@ -16,7 +16,7 @@ external_resources:
 
 [Java](https://www.oracle.com/java/index.html) is one of the world's most popular programming languages. It can be used to create applications ranging from IoT software to basic web applications, and has consistenly shown to be a high-demand skill in the tech industry.
 
-In this guide, we'll learn to install the Oracle Java development kit for building Java applications. We'll also cover OpenJDK, an open-source alternative.
+In this guide, you'll learn to install the Oracle Java development kit for building Java applications atop Ubuntu 16.04. We'll also cover OpenJDK, an open-source alternative.
 
 ## Before You Begin
 
@@ -28,7 +28,7 @@ In this guide, we'll learn to install the Oracle Java development kit for buildi
 
         sudo apt-get update && sudo apt-get upgrade
 
-## Install Oracle JDK
+## Install Oracle Java Development Kit
 
 The Oracle JDK, or *Java Development Kit*, includes a development environment for building applications with the Java programming language. Please be aware that some elements of the Oracle JDK are proprietary, meaning that there may be licensing implications with respect to applications you develop with it.
 
@@ -41,7 +41,7 @@ The Oracle JDK, or *Java Development Kit*, includes a development environment fo
         sudo add-apt-repository ppa:webupd8team/java
 
     {: .note}
-    > This repository is *not* maintained by Oracle. It does not contain actual Java files, but does allow us to download installers for Oracle Java software. Before using the installers, you'll be prompted to accept a license agreement, which can be found in its entirety [here](http://www.oracle.com/technetwork/java/javase/terms/license/index.html).
+    > This repository is *not* maintained by Oracle. It does not contain actual Java files, but does allow you to download installers for Oracle Java software. Before using the installers, you'll be prompted to accept a license agreement, which can be found in its entirety [here](http://www.oracle.com/technetwork/java/javase/terms/license/index.html).
 
 3.  Update the local package cache:
 
@@ -51,7 +51,7 @@ The Oracle JDK, or *Java Development Kit*, includes a development environment fo
 
         sudo apt-get install oracle-java8-installer
 
-    This package will run an installer for The Oracle JDK 8, which is the current stable release. You may also replace `java8` in the package name with `java7` or `java9` to install different versions, although these releases are not recommended for development.
+    This package will run an installer for The Oracle JDK 8, which at the time of writing this guide is the current stable release. You may also replace `java8` in the package name with `java7` or `java9` to install different versions, although these releases are not recommended for development.
 
 5.  Verify that Java and the Java compiler have been properly installed:
 
@@ -88,9 +88,9 @@ Many applications include code or configuration that references the `JAVA_HOME` 
 
     This should return the path to the Java binary, which applications can use when executing commands.
 
-## OpenJDK
+## Install OpenJDK
 
-The above installation methods allow you to use the Oracle JDK, which is be bound by licensing terms and includes proprietary components. If you're not careful, this can pose an issue when developing production applications.
+The above installation methods allow you to use the Oracle JDK, which is bound by licensing terms and includes proprietary components. If you're not careful, this can pose an issue when developing production applications.
 
 Fortunately, OpenJDK provides an open-source alternative that is just as easy to install.
 
@@ -107,4 +107,4 @@ However, if you only need to run applications that you've already downloaded, yo
 Note that this is unnecessary if you've installed OpenJDK, since it includes the JRE.
 
 {: .caution}
-> OpenJDK and Oracle Java are *not* identical. There may be licensing, performance, and stability differences, and this should be considered carefully when developing production applications.
+> OpenJDK and Oracle Java are *not* identical. There may be licensing, performance and stability differences, and these should be considered carefully when developing production applications.
